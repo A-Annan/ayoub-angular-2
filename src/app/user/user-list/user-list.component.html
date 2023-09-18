@@ -19,7 +19,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let user of users; let index = index">
+            <tr *ngFor="let user of results.docs; let index = index">
               <th scope="row">{{ index }}</th>
               <td>{{ user.firstName }}</td>
               <td>{{ user.lastName }}</td>
@@ -42,3 +42,16 @@
     </div>
   </div>
 </div>
+<nav style="float: right; margin-right: 40px;" aria-label="Page navigation example">
+  <ul class="pagination">
+    <li [ngClass]="(results.meta.page -1) !==0?'':'disabled'" class="page-item"><a
+        (click)="getData(results.meta.page-1)" class="page-link">Previous</a></li>
+    <li *ngIf="(results.meta.page -1) !==0" class="page-item"><a (click)="getData(results.meta.page-1)"
+        class="page-link">{{results.meta.page-1}}</a></li>
+    <li class="page-item"><a class="page-link">{{results.meta.page}}</a></li>
+    <li *ngIf="(results.meta.page+1)<=results.meta.totalPages" class="page-item"><a
+        (click)="getData(results.meta.page+1)" class="page-link">{{results.meta.page+1}}</a></li>
+    <li [ngClass]="(results.meta.page+1)<=results.meta.totalPages?'':'disabled'" class="page-item"><a class="page-link"
+        (click)="getData(results.meta.page+1)">Next</a></li>
+  </ul>
+</nav>
