@@ -1,0 +1,19 @@
+<form style="margin: 30px;;">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Name</label>
+    <input [(ngModel)]="project.name" name="email" type="email" class="form-control" id="exampleInputEmail1"
+      aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Start Date</label>
+    <input type="date" name="firstName" [(ngModel)]="project.startDate" class="form-control" id="exampleInputPassword1">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">End date</label>
+    <input type="date" name="lastName" [(ngModel)]="project.endDate" class="form-control" id="exampleInputPassword1">
+  </div>
+
+  <button (click)="add()" style="margin-right: 5px;" type="submit" class="btn btn-primary">Add</button>
+  <button (click)="back()" type="submit" class="btn btn-primary">back</button>
+</form>

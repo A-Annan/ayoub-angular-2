@@ -1,0 +1,39 @@
+<div class="row" style="margin: 20px;">
+  <div class="filter-container" style="padding-left: 100px; margin-top: 0px">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Projects</h3>
+        <button class="btn btn-primary btn-sm add-button" routerLink="add">
+          Add project
+        </button>
+        <table class="table" style="margin: 0 auto">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">start date</th>
+              <th scope="col">end Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let project of projects; let index = index">
+              <th scope="row">{{ index }}</th>
+              <td>{{ project.name }}</td>
+              <td>{{ project.startDate | date: 'M/d/yy, h:mm a' }}</td>
+              <td>{{ project.endDate | date: 'M/d/yy, h:mm a' }}</td>
+              <td>
+                <button (click)="view(project)" type="button" class="btn btn-primary btn-sm" style="margin-right: 5px;"
+                  aria-label="Close">
+                  view
+                </button>
+                <button (click)="delete(project)" class="btn btn-danger btn-sm">
+                  <i class="fa fa-trash"></i> Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
