@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class UserViewComponent {
   constructor(public route: ActivatedRoute) {}
   links = [
-    { title: 'Info', url: 'info' },
+    { title: 'Info', url: './' },
     { title: 'Projects', url: 'projects' }
   ];
 

@@ -4,10 +4,14 @@ import { UserListComponent } from './user/user-list/user-list.component';
 
 const routes: Routes = [
   {
-    path:'',
+    path:'users',
     loadChildren: () => import('./user/user.module').then(m => m.UserModule)
 },
 {path:"home",component:UserListComponent},
+{
+  path:'**',
+  redirectTo:'users'
+}
 ];
 
 @NgModule({

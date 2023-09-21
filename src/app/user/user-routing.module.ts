@@ -19,7 +19,7 @@ const routes: Routes = [
     component: UserViewComponent,
     children:[
       {
-        path: 'info',
+        path: '',
         component: UserInfoViewComponent,
       },
       {

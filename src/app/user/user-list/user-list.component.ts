@@ -21,7 +21,7 @@ export class UserListComponent implements OnInit {
   getData(page: number = 1) {
     this.userService
       .findAll({
-        limit: 2,
+        limit: 10,
         page: page,
       })
       .subscribe((data: any) => {
@@ -38,7 +38,7 @@ export class UserListComponent implements OnInit {
   }
 
   view(user: User) {
-    this.router.navigate(['/details', user._id]);
+    this.router.navigate(['/users/details', user._id]);
   }
 }
 
